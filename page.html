@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>消费商招募</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/swiper.min.css"/>
+    <link rel="stylesheet" href="css/choumei.min.css"/>
+    <link rel="stylesheet" href="css/style.min.css"/>
+    <style>
+        html,body{
+            height: 100%;
+        }
+        .banner-tit{
+            font-size: 24px;
+            text-align: center;
+            color: #fff;
+            font-weight: bold;
+            padding: 25px 0 15px 0;
+        }
+        .buy-detail{
+            padding: 20px;
+        }
+        .buy-detail dt{
+            font-size: 15px;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+        .buy-detail dd{
+            font-size: 12px;
+            color: #fff;
+            line-height: 2;
+        }
+        .container{
+            height: 100%;
+            background: url(images/bg-page.jpg) no-repeat center center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="banner-tit">选择超值产品</h1>
+    <div class="swiper-container" >
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="images/banner_02.jpg" class="main-img" alt=""/></div>
+            <div class="swiper-slide"><img src="images/banner_02.jpg" class="main-img" alt=""/></div>
+            <div class="swiper-slide"><img src="images/banner_02.jpg" class="main-img" alt=""/></div>
+            <div class="swiper-slide"><img src="images/banner_02.jpg" class="main-img" alt=""/></div>
+            <div class="swiper-slide"><img src="images/banner_02.jpg" class="main-img" alt=""/></div>
+        </div>
+        <div class="swiper-pagination" id="pagination"></div>
+    </div>
+
+    <dl class="buy-detail">
+        <dt>购买说明：</dt>
+        <dd>一、购买以上超值产品即可成为商城消费商，享受平台消费商特定 权益：</dd>
+        <dd> 1、享受平台一年消费商权益；</dd>
+        <dd> 2、消费省钱：平台消费享受平台会员直供价，立省产品利润50%；</dd>
+        <dd> 3、分享赚钱：推荐分享平台产品，可参与产品利润分享，立赚产品利润20%；</dd>
+        <dd> *关注微信公众号“金燧商学院”，了解更多消费商权益。</dd>
+    </dl>
+</div>
+
+<script src="js/swiper.min.js"></script>
+<script>
+    var mySwiper=new Swiper(".swiper-container",{
+        initialSlide :1,
+        autoplay : 5000,
+        slidesPerView:"auto",
+        centeredSlides:!0,
+        watchSlidesProgress:!0,
+        pagination:".swiper-pagination",
+        paginationClickable:!0,
+
+        onProgress:function(a){
+            var b,c,d;for(b=0;b<a.slides.length;b++)c=a.slides[b],d=c.progress,scale=1-Math.min(Math.abs(.2*d),1),es=c.style,es.opacity=1-Math.min(Math.abs(d/2),1),es.webkitTransform=es.MsTransform=es.msTransform=es.MozTransform=es.OTransform=es.transform="translate3d(0px,0,"+-Math.abs(150*d)+"px)"},onSetTransition:function(a,b){for(var c=0;c<a.slides.length;c++)es=a.slides[c].style,es.webkitTransitionDuration=es.MsTransitionDuration=es.msTransitionDuration=es.MozTransitionDuration=es.OTransitionDuration=es.transitionDuration=b+"ms"
+        }
+    });
+</script>
+
+</body>
+</html>
